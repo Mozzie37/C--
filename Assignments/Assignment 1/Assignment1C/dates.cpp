@@ -15,7 +15,6 @@ using namespace std;
 int main(){
     int day, monthNum, year;
     string monthStr;
-
     cout << "Enter the day (number): ";
     cin >> day;
     cout << endl << "Enter the month (number)";
@@ -25,16 +24,11 @@ int main(){
     getline(cin, monthStr);
     cout << endl << "Enter the year (number): ";
     cin >> year;
-    
-
-    
-
-    
-
-    
-
-
-
-
+    cout << "Here are some ways to represent the date:\n";
+    cout << day << "/" << monthNum << "/" << year << endl;
+    cout << year << "/" << monthNum << "/" << day <<endl;
+    cout << monthNum << "/" << day << "/" << year << endl;
+    cout << monthStr << " " << day << "," << year << endl;
+    cout << day << " " << monthStr << " " << year << endl;
     return 0;
 }
