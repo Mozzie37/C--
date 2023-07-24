@@ -11,9 +11,8 @@ using std::cin, std::cout, std::endl;
 3) A loop with a predetermined start and end
 */
 
-
-
 int main(){
+    int choice;
     
 
 
