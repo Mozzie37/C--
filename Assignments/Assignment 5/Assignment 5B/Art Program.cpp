@@ -51,7 +51,15 @@ void draw(){
     cout << "P2\n" << width << " " << height << "\n255\n";
     for(int i = 0; i < height; i++){
         for(int j = 0; j < width; j++){
-            cout << canvas[i][j] << " ";
+            if(canvas[i][j] >= 100){
+                cout << canvas[i][j] << " ";
+            }
+            else if(canvas [i][j] >= 10){
+                cout << canvas [i][j] << "  ";
+            }
+            else{
+                cout << canvas[i][j] << "   ";
+            }
         }
         cout << "\n";
     }
