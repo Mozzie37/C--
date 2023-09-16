@@ -69,7 +69,8 @@ void checkIfWin(){
         win = true;
        }
     if(turn == 8){
-        cout << "This game ends in a draw."; 
+        cout << "This game ends in a draw.";
+        win = true; 
         return;
     }
     if (win == true){
