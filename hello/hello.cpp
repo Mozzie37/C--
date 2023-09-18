@@ -22,7 +22,7 @@ int main(){
 
 /*ideas for easier projects
 1. calculator
-2. tic tac toe    
+2. tic tac toe    (done)
 3. checkers
 4. unit converter WITH GUI
 5. simple platformer

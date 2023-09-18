@@ -2,12 +2,12 @@
 
 using std::string, std::cin, std::cout;
 
-string board[6][7] = {{"0", "0", "0", "0", "0", "0", "0", },
-                      {"0", "0", "0", "0", "0", "0", "0", },
-                      {"0", "0", "0", "0", "0", "0", "0", },
-                      {"0", "0", "0", "0", "0", "0", "0", },
-                      {"0", "0", "0", "0", "0", "0", "0", },
-                      {"0", "0", "0", "0", "0", "0", "0", }};
+string board[6][7] = {{"-", "-", "-", "-", "-", "-", "-", },
+                      {"-", "-", "-", "-", "-", "-", "-", },
+                      {"-", "-", "-", "-", "-", "-", "-", },
+                      {"-", "-", "-", "-", "-", "-", "-", },
+                      {"-", "-", "-", "-", "-", "-", "-", },
+                      {"-", "-", "-", "-", "-", "-", "-", },};
 int turn = 0;
 bool running = true;
 string player = "X";
@@ -68,6 +68,7 @@ void playerMove(){
 }
 
 void horizontalCheck(){
+    //works
     for(int i = 0; i < 6; i++){
         for(int j = 0; j < 4; j++){
             if(board[i][j] == "X" and 
@@ -89,6 +90,7 @@ void horizontalCheck(){
 }
 
 void verticalCheck(){
+    //works
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 7; j++){
             if(board[i][j] == "X" and 
@@ -120,7 +122,7 @@ void diagonalCheck(){
        0
     */
     for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
+        for(int j = 0; j < 4; j++){
             if(board[i][j] == "X" and 
                board[i + 1][j + 1] == "X" and
                board[i + 2][j + 2] == "X" and
@@ -137,7 +139,6 @@ void diagonalCheck(){
             }
         }
     }
-    //todo:
     //top right to bottom left
     /*
        0
@@ -145,6 +146,24 @@ void diagonalCheck(){
      0
     0
     */
+   for(int i = 5; i >= 3; i--){
+        for(int j = 0; j < 4; j++){
+            if(board[i][j] == "X" and 
+               board[i - 1][j + 1] == "X" and
+               board[i - 2][j + 2] == "X" and
+               board[i - 3][j + 3] == "X"){
+                cout << "X wins!\n";
+                running = false;
+            }
+            else if (board[i][j] == "O" and 
+                     board[i - 1][j + 1] == "O" and
+                     board[i - 2][j + 2] == "O" and
+                     board[i - 3][j + 3] == "O"){
+                cout << "O wins!\n";
+                running = false;
+            }
+        }
+    }
 
 }
 
